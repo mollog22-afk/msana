@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens sana in corpore sano</title>
+    <style>
+        :root {
+            --primary: #2d5a27;
+            --secondary: #f4f9f4;
+            --accent: #e67e22;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background: var(--secondary);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Stile Test Mentale */
+        #mental-test {
+            background: #fff3e0;
+            text-align: center;
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #d35400;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mens sana in corpore sano</h1>
+    <p>L'equilibrio perfetto tra nutrizione, movimento e mente.</p>
+</header>
+
+<nav>
+    <a href="#dieta">Dieta</a>
+    <a href="#esercizi">Esercizi</a>
+    <a href="#mente">Test Mentale</a>
+</nav>
+
+<div class="container">
+
+    <section id="dieta">
+        <h2>🥗 Nutrizione Consapevole</h2>
+        <p>Una dieta equilibrata non è privazione, ma nutrimento per le tue cellule.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Colazione</h3>
+                <ul>
+                    <li>Porridge d'avena con frutti di bosco</li>
+                    <li>Tè verde o caffè senza zucchero</li>
+                    <li>3 noci per i grassi buoni</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Pranzo/Cena</h3>
+                <ul>
+                    <li>50% Verdure di stagione</li>
+                    <li>25% Proteine (pesce, legumi, carni bianche)</li>
+                    <li>25% Carboidrati complessi (riso integrale, quinoa)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="esercizi">
+        <h2>💪 Movimento Rigenerante</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cardio (30 min)</h3>
+                <p>Camminata veloce o nuoto per migliorare la circolazione e l'umore.</p>
+            </div>
+            <div class="card">
+                <h3>Forza & Flex</h3>
+                <p>Esercizi a corpo libero (squat, plank) e 10 minuti di stretching finale.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mente">
+        <h2>🧠 Allenamento Mentale</h2>
+        <div id="mental-test">
+            <h3>Test di Prontezza: Colori e Parole</h3>
+            <p>Riesci a mantenere la concentrazione? Clicca il tasto per iniziare una breve sfida di riflessi mentali.</p>
+            <p id="challenge-text" style="font-size: 1.5rem; font-weight: bold; margin: 20px;"></p>
+            <button onclick="startTest()">Inizia il Test</button>
+            <p id="result-msg"></p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 Mens sana in corpore sano - Progetto Benessere
+</footer>
+
+<script>
+    function startTest() {
+        const colors = ['RED', 'BLUE', 'GREEN', 'ORANGE'];
+        const display = document.getElementById('challenge-text');
+        const msg = document.getElementById('result-msg');
+        
+        msg.innerText = "Preparati...";
+        
+        setTimeout(() => {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            display.innerText = randomColor;
+            display.style.color = colors[Math.floor(Math.random() * colors.length)];
+            msg.innerText = "Sfida: Leggi il COLORE dell'inchiostro, non la parola!";
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
