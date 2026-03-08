@@ -1,0 +1,80 @@
+/* RESET DI BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* STILE HEADER & NAV (CLERK) */
+header {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e67e22 !important;
+}
+
+/* BOTTONI CLERK (LOGIN) */
+/* Se Clerk usa i suoi bottoni standard, questi stili aiutano a integrarli */
+button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* CONTENITORI */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* SEZIONI */
+section {
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* GRIGLIE RESPONSIVE */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 5px solid #2d5a27;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #eee;
+  margin-top: 50px;
+}
